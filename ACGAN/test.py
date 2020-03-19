@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # import torch
 # save_dir = './save'
 #
@@ -26,3 +27,10 @@ plt.xlabel("x axis caption")
 plt.ylabel("y axis caption")
 plt.plot(x, y)
 plt.show()
+=======
+import torch
+save_dir = './save'
+
+# torch.save(a,save_dir + r'\a.pkl')
+print(torch.load(save_dir + '/a.pkl'))
+>>>>>>> 398060301d4df0d009d1537346991da2140050ee
