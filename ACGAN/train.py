@@ -4,17 +4,15 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
-
-
-# 参数定义
+#参数定义
 cuda = True if torch.cuda.is_available() else False
-n_class = 5
+n_class = 9
 batch_size = 64
 lr = 0.0002
 n_epochs = 2000
 save_dir = r'.\save'
-
 
 #生成器参数
 #生成器噪声输入维度 生成器输入向量维度latent_dim + n_class
@@ -30,6 +28,30 @@ D_hidden_size_2 = 256
 D_hidden_size_3 = 128
 
 
+#筛选需要进行扩充的类别
+def filter(data:pd.DataFrame,numClass:int,threshold:int):
+    result = pd.DataFrame()
+    labels = [i for i in range(numClass)]
+    augmentLables = []
+    for i in labels:
+        if(sum(data['label'] == i))< threshold:
+            augmentLables.append(i)
+    choosen = data['label'].isin(augmentLables)
+    return data[choosen]
+
+# Configure data loader
+class MydataSet(tud.Dataset):
+    def __init__(self, data):
+        super().__init__()
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        label = self.data.iloc[idx, 0]
+        session = self.data.iloc[idx, 1:].tolist()
+        return label,session
 
 # 模型初始化函数
 def weights_init_normal(m):
@@ -45,7 +67,7 @@ class Generator(nn.Module):
 
         #生成器的网络结构
         self.model = nn.Sequential(
-            nn.Linear(latent_dim + n_class, G_hidden_size_1),
+            nn.Linear(latent_dim , G_hidden_size_1),
             nn.LeakyReLU(0.2, inplace=True),
             nn.Linear(G_hidden_size_1, G_hidden_size_2),
             nn.LeakyReLU(0.2, inplace=True),
@@ -104,20 +126,8 @@ if cuda:
 generator.apply(weights_init_normal)
 discriminator.apply(weights_init_normal)
 
-# Configure data loader
-os.makedirs("../../data/mnist", exist_ok=True)
-dataloader = torch.utils.data.DataLoader(
-    datasets.MNIST(
-        "../../data/mnist",
-        train=True,
-        download=True,
-        transform=transforms.Compose(
-            [transforms.Resize(opt.img_size), transforms.ToTensor(), transforms.Normalize([0.5], [0.5])]
-        ),
-    ),
-    batch_size=opt.batch_size,
-    shuffle=True,
-)
+#DataSet
+dataloader = tud.DataLoader(dataset, batch_size=3, shuffle=True)
 
 # Optimizers
 optimizer_G = torch.optim.Adam(generator.parameters(), lr=lr)
@@ -135,7 +145,7 @@ D_losses = []
 ACC = []
 
 for epoch in range(n_epochs):
-    for i, (sessions, labels) in enumerate(dataloader):
+    for i, (labels,sessions) in enumerate(dataloader):
 
         batch_size = sessions.shape[0]
 
@@ -155,7 +165,7 @@ for epoch in range(n_epochs):
         z = FloatTensor(np.random.normal(0, 1, (batch_size, latent_dim)))
         gen_labels = LongTensor(np.random.randint(0, n_class, batch_size))
 
-        # Generate a batch of images
+        # Generate a batch of sessions
         gen_sessions = generator(z, gen_labels)
 
         # Loss measures generator's ability to fool the discriminator

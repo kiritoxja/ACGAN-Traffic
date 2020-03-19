@@ -53,51 +53,71 @@ numMax = 4000
 trainRatio = 0.4
 sessionLen = 500
 trainData = pd.DataFrame()
+augmentTrainData = pd.DataFrame()
 testData = pd.DataFrame()
 umbalancedList = []
 os.chdir(baseDir)
 dirList = os.listdir()
 # 获取所有的类别
 classList = list(filter(lambda i:os.path.isdir(i),dirList))
+classNum = len(classList)
+maxLabel = classNum - 1
+minLabel = 0
+#类别和标签的对应关系
+class2Label = {}
 print('classList: ',classList)
 
 #每一类的truncate如果大于等于4000 就全取truncate  否则全取（如果大于4000仍只取4000）
 for className in classList:
-    label = classList.index(className)
     truncateCsvPath = os.path.join('./',className,'Truncate.csv')
     paddingCsvPath = os.path.join('./', className, 'Padding.csv')
     truncateCsv = pd.read_csv(truncateCsvPath, header=None)
     if truncateCsv.shape[0] >= numMax:
-        #只用trunvate就足够了
+        #只用trunvate就足够了 是不需要生成算法的
+        label = maxLabel
+        class2Label[className] = maxLabel
+        maxLabel -= 1
         trainData,testData = addTrainAndTest(truncateCsv,trainData,testData,trainRatio,numMax,True,label)
     elif os.path.exists(paddingCsvPath):
         #存在padding
         paddingCsv = pd.read_csv(paddingCsvPath, header=None)
         if paddingCsv.shape[0] + truncateCsv.shape[0] >= numMax:
             #总数够
+            label = maxLabel
+            class2Label[className] = maxLabel
+            maxLabel -= 1
             tempData = truncateCsv.iloc[:]
             paddingCsv = paddingCsv.sample(frac=1.0)
             tempData = tempData.append(paddingCsv.iloc[ : numMax - truncateCsv.shape[0] - 1])
             trainData, testData = addTrainAndTest(tempData, trainData, testData, trainRatio, numMax, True, label)
         else:
             #总数不够 是需要扩充的样本
+            label = minLabel
+            class2Label[className] = minLabel
+            minLabel += 1
             umbalancedList.append(className)
             tempData = truncateCsv.iloc[:]
             tempData = tempData.append(paddingCsv.iloc[:])
-            trainData, testData = addTrainAndTest(tempData, trainData, testData, trainRatio, numMax, False, label)
+            augmentTrainData, testData = addTrainAndTest(tempData,augmentTrainData, testData, trainRatio, numMax, False, label)
     else:
         #不存在padding 且不平衡
+        label = minLabel
+        class2Label[className] = minLabel
+        minLabel += 1
         umbalancedList.append(className)
-        trainData, testData = addTrainAndTest(truncateCsv, trainData, testData, trainRatio, numMax, False, label)
+        augmentTrainData, testData = addTrainAndTest(truncateCsv, augmentTrainData, testData, trainRatio, numMax, False, label)
 
 #保存
+print('class2Label: ', class2Label)
 print('umbalancedClass : ',umbalancedList)
 saveDir = r'../../../trainTestData'
 os.chdir(saveDir)
 with open(str(sessionLen)+'_train.pkl','wb') as trainF:
     with open(str(sessionLen)+'_test.pkl','wb') as testF:
-        pk.dump(trainData, trainF)
-        pk.dump(testData, testF)
+        with open(str(sessionLen) + '_augmentTrain.pkl', 'wb') as augTrainF:
+            pk.dump(trainData, trainF)
+            pk.dump(testData, testF)
+            pk.dump(augmentTrainData,augTrainF)
 
 
 
