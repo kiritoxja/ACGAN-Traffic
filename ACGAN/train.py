@@ -5,6 +5,7 @@ import torch.nn.functional as F
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import pickle as pk
 
 #参数定义
 cuda = True if torch.cuda.is_available() else False
@@ -13,6 +14,7 @@ batch_size = 64
 lr = 0.0002
 n_epochs = 2000
 save_dir = r'.\save'
+data_dir = r'..\trainTestData\500_augmentTrain.pkl'
 
 #生成器参数
 #生成器噪声输入维度 生成器输入向量维度latent_dim + n_class
@@ -29,15 +31,15 @@ D_hidden_size_3 = 128
 
 
 #筛选需要进行扩充的类别
-def filter(data:pd.DataFrame,numClass:int,threshold:int):
-    result = pd.DataFrame()
-    labels = [i for i in range(numClass)]
-    augmentLables = []
-    for i in labels:
-        if(sum(data['label'] == i))< threshold:
-            augmentLables.append(i)
-    choosen = data['label'].isin(augmentLables)
-    return data[choosen]
+# def filter(data:pd.DataFrame,numClass:int,threshold:int):
+#     result = pd.DataFrame()
+#     labels = [i for i in range(numClass)]
+#     augmentLables = []
+#     for i in labels:
+#         if(sum(data['label'] == i))< threshold:
+#             augmentLables.append(i)
+#     choosen = data['label'].isin(augmentLables)
+#     return data[choosen]
 
 # Configure data loader
 class MydataSet(tud.Dataset):
@@ -50,12 +52,12 @@ class MydataSet(tud.Dataset):
 
     def __getitem__(self, idx):
         label = self.data.iloc[idx, 0]
-        session = self.data.iloc[idx, 1:].tolist()
+        session = torch.tensor(self.data.iloc[idx, 1:].tolist())
         return label,session
 
 # 模型初始化函数
-def weights_init_normal(m):
-        torch.nn.init.normal_(m.weight.data, 0.0, 0.02)
+# def weights_init_normal(m):
+#         torch.nn.init.normal_(m.weight.data, 0.0, 0.02)
 
 # 定义生成器
 class Generator(nn.Module):
@@ -123,11 +125,13 @@ if cuda:
     auxiliary_loss.cuda()
 
 # Initialize weights
-generator.apply(weights_init_normal)
-discriminator.apply(weights_init_normal)
+# generator.apply(weights_init_normal)
+# discriminator.apply(weights_init_normal)
 
 #DataSet
-dataloader = tud.DataLoader(dataset, batch_size=3, shuffle=True)
+f = open(data_dir,'rb')
+dataset = MydataSet(pk.load(f))
+dataloader = tud.DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
 # Optimizers
 optimizer_G = torch.optim.Adam(generator.parameters(), lr=lr)
@@ -205,11 +209,11 @@ for epoch in range(n_epochs):
         D_losses.append(d_loss.item())
         ACC.append(d_acc)
 
-        if epoch %20 == 0:
-            print(
-            "[Epoch %d/%d] [Batch %d/%d] [D loss: %f, acc: %d%%] [G loss: %f]"
-            % (epoch, n_epochs, i, len(dataloader), d_loss.item(), 100 * d_acc, g_loss.item())
-             )
+    if epoch %20 == 0:
+        print(
+        "[Epoch %d/%d] [Batch %d/%d] [D loss: %f, acc: %d%%] [G loss: %f]"
+        % (epoch, n_epochs, i, len(dataloader), d_loss.item(), 100 * d_acc, g_loss.item())
+         )
 
 torch.save(generator,save_dir+r'\generator.pkl')
 torch.save(G_losses,save_dir+r'\gloss.pkl')
