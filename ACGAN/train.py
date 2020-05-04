@@ -54,6 +54,7 @@ class MydataSet(tud.Dataset):
 
     def __getitem__(self, idx):
         label = self.data.iloc[idx, 0]
+        session = self.data.iloc[idx, 1:]
 
 
 
@@ -143,9 +144,6 @@ dataloader = tud.DataLoader(dataset, batch_size=batch_size, shuffle=True)
 generator.apply(weights_init_normal)
 discriminator.apply(weights_init_normal)
 
-#DataSet
-dataloader = tud.DataLoader(dataset, batch_size=3, shuffle=True)
-
 # Optimizers
 optimizer_G = torch.optim.Adam(generator.parameters(), lr=lr)
 optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=lr)
@@ -227,11 +225,6 @@ for epoch in range(n_epochs):
         "[Epoch %d/%d] [Batch %d/%d] [D loss: %f, acc: %d%%] [G loss: %f]"
         % (epoch, n_epochs, i, len(dataloader), d_loss.item(), 100 * d_acc, g_loss.item())
          )
-        if epoch %20 == 0:
-            print(
-            "[Epoch %d/%d] [Batch %d/%d] [D loss: %f, acc: %d%%] [G loss: %f]"
-            % (epoch, n_epochs, i, len(dataloader), d_loss.item(), 100 * d_acc, g_loss.item()))
-
 
 torch.save(generator,save_dir+r'\generator.pkl')
 torch.save(G_losses,save_dir+r'\gloss.pkl')
