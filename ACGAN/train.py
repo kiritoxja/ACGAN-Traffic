@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pickle as pk
 
-
 #参数定义
 cuda = True if torch.cuda.is_available() else False
 n_class = 9
@@ -42,7 +41,6 @@ D_hidden_size_3 = 128
 #     choosen = data['label'].isin(augmentLables)
 #     return data[choosen]
 
-
 # Configure data loader
 class MydataSet(tud.Dataset):
     def __init__(self, data):
@@ -54,19 +52,12 @@ class MydataSet(tud.Dataset):
 
     def __getitem__(self, idx):
         label = self.data.iloc[idx, 0]
-        session = self.data.iloc[idx, 1:]
-
-
+        session = torch.tensor(self.data.iloc[idx, 1:].tolist())
+        return label,session
 
 # 模型初始化函数
 # def weights_init_normal(m):
 #         torch.nn.init.normal_(m.weight.data, 0.0, 0.02)
-#         session = self.data.iloc[idx, 1:].tolist()
-#         return label,session
-
-# 模型初始化函数
-def weights_init_normal(m):
-        torch.nn.init.normal_(m.weight.data, 0.0, 0.02)
 
 # 定义生成器
 class Generator(nn.Module):
@@ -141,8 +132,6 @@ if cuda:
 f = open(data_dir,'rb')
 dataset = MydataSet(pk.load(f))
 dataloader = tud.DataLoader(dataset, batch_size=batch_size, shuffle=True)
-generator.apply(weights_init_normal)
-discriminator.apply(weights_init_normal)
 
 # Optimizers
 optimizer_G = torch.optim.Adam(generator.parameters(), lr=lr)

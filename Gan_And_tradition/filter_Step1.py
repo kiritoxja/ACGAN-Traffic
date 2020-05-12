@@ -14,6 +14,8 @@ import pandas as pd
 # 7       4
 # 4       2
 
+#gan数据label的映射    TrueLable2GanLable:  {0: 0, 1: 1, 2: 2, 3: 3, 5: 4}
+
 sessionLen = 500
 dataDir = r'../trainTestData/500_augmentTrain.pkl'
 traditionDataDir = r'../trainData/BorderlineSMOTE_new.pkl'
@@ -41,6 +43,20 @@ for key,value in class2Num.items():
     else:
         #用经典算法生成的数据
         trainData = trainData.append(traditionData[traditionData['label'].isin([key])])
+
+#需要对Gan数据的标签从0开始重新标号
+TrueLable2GanLable = {}
+ganLable = sorted(ganData['label'].unique().tolist())
+count = 0
+for i in ganLable:
+    TrueLable2GanLable[i] = count
+    count+=1
+print('TrueLable2GanLable: ',TrueLable2GanLable)
+#修改label值
+def lable(df):
+    return TrueLable2GanLable[df['label']]
+ganData['label'] = ganData.apply(lambda row : lable(row),axis=1)
+
 with open(ganDataSavePath,'wb') as ganSaveF:
     with open(tempDataSavePath,'wb') as tempF:
         pk.dump(ganData,ganSaveF)
