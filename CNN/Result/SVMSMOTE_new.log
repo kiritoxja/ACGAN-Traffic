@@ -1,0 +1,924 @@
+============= TrainDate ===============
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 22399 entries, 0 to 22398
+Columns: 530 entries, Label to 529
+dtypes: float64(529), int32(1)
+memory usage: 90.5 MB
+==================================
+============= TestDate ===============
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 18314 entries, 0 to 18313
+Columns: 530 entries, Label to 529
+dtypes: float64(529), int32(1)
+memory usage: 74.0 MB
+==================================
+-------- start train Epoch [001] ---------
+Training:Epoch[001/010] Iteration[100/1400] Loss: 2.2862 Acc:24.31%
+Training:Epoch[001/010] Iteration[200/1400] Loss: 1.2004 Acc:43.25%
+Training:Epoch[001/010] Iteration[300/1400] Loss: 0.5957 Acc:54.98%
+Training:Epoch[001/010] Iteration[400/1400] Loss: 0.4211 Acc:62.22%
+Training:Epoch[001/010] Iteration[500/1400] Loss: 0.3749 Acc:66.88%
+Training:Epoch[001/010] Iteration[600/1400] Loss: 0.2886 Acc:70.48%
+Training:Epoch[001/010] Iteration[700/1400] Loss: 0.2537 Acc:73.38%
+Training:Epoch[001/010] Iteration[800/1400] Loss: 0.1638 Acc:76.07%
+Training:Epoch[001/010] Iteration[900/1400] Loss: 0.1822 Acc:78.10%
+Training:Epoch[001/010] Iteration[1000/1400] Loss: 0.1325 Acc:79.86%
+Training:Epoch[001/010] Iteration[1100/1400] Loss: 0.1333 Acc:81.26%
+Training:Epoch[001/010] Iteration[1200/1400] Loss: 0.1011 Acc:82.58%
+Training:Epoch[001/010] Iteration[1300/1400] Loss: 0.1012 Acc:83.64%
+Training:Epoch[001/010] Iteration[1400/1400] Loss: 0.0823 Acc:84.61%
+[[1405   11    4    7    0    0  120    0   10   12    1   29]
+ [   1 1014  143   13    3   13  182    0   76  138    5   12]
+ [   0   92 1219    7    5   10  132    0   67   59    4    5]
+ [   0    5    3 1468    2   27   85    0    5    0    1    4]
+ [   0    6    0    0 1501    0   88    0    1    0    4    0]
+ [   0    6    2   27    0 1448   99    0    2    9    3    4]
+ [   0    7    0    0    0    0 4739    0   43   11    0    0]
+ [   0    2    3    0    0    1  103 1486    3    2    0    0]
+ [   3   60   97    2    1    4  217    0  967  242    0    7]
+ [   1   85   98    3    2    4  193    0  295  912    1    6]
+ [   0    7    1    0    9    1   86    0    2    0 1482   12]
+ [  65   14    8    7   23   10  125    6   14    8    9 1311]]
+-------- over train Epoch [001] ---------
+-------- starts test Epoch [001] ---------
+TestSet:	 Epoch[001/010] Iteration[1145/1145] Loss: 125.6158 Acc:96.61%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  651    0    0    0    0    2    0    2    7    0    0]
+ [   0    4 1063    0    0    0    1    0    2    0    0    0]
+ [   0    0    0 2347    0    0    0    0    0    0    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    1    0    1    0 1440    0    0    0    0    0    0]
+ [   0    0    0    0    0    0   53    0    0    5    0    0]
+ [   1    3    0    1    0    3    0 2389    1    0    0    1]
+ [   0   38    2    0    0    1    2    0 2041  315    0    0]
+ [   0   91    6    0    0    0   17    0   78 2206    0    1]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [  23    3    0    0    0    1    0    0    1    4    1 2366]]
+Family 1 :
+-----------------------------
+Precison = 0.9671      Recall = 1.0000
+F-Score = 0.9833       Acc = 0.9986
+Family 2 :
+-----------------------------
+Precison = 0.8230      Recall = 0.9834
+F-Score = 0.8961       Acc = 0.9918
+Family 3 :
+-----------------------------
+Precison = 0.9925      Recall = 0.9935
+F-Score = 0.9930       Acc = 0.9992
+Family 4 :
+-----------------------------
+Precison = 0.9991      Recall = 1.0000
+F-Score = 0.9996       Acc = 0.9999
+Family 5 :
+-----------------------------
+Precison = 1.0000      Recall = 0.5000
+F-Score = 0.6667       Acc = 0.9999
+Family 6 :
+-----------------------------
+Precison = 0.9965      Recall = 0.9986
+F-Score = 0.9976       Acc = 0.9996
+Family 7 :
+-----------------------------
+Precison = 0.7067      Recall = 0.9138
+F-Score = 0.7970       Acc = 0.9985
+Family 8 :
+-----------------------------
+Precison = 1.0000      Recall = 0.9958
+F-Score = 0.9979       Acc = 0.9995
+Family 9 :
+-----------------------------
+Precison = 0.9605      Recall = 0.8508
+F-Score = 0.9023       Acc = 0.9759
+Family 10 :
+-----------------------------
+Precison = 0.8695      Recall = 0.9195
+F-Score = 0.8938       Acc = 0.9714
+Family 11 :
+-----------------------------
+Precison = 0.9996      Recall = 1.0000
+F-Score = 0.9998       Acc = 0.9999
+Family 12 :
+-----------------------------
+Precison = 0.9987      Recall = 0.9862
+F-Score = 0.9924       Acc = 0.9980
+-------- over test Epoch [001] ---------
+-------- start train Epoch [002] ---------
+Training:Epoch[002/010] Iteration[100/1400] Loss: 0.0666 Acc:98.12%
+Training:Epoch[002/010] Iteration[200/1400] Loss: 0.0607 Acc:98.00%
+Training:Epoch[002/010] Iteration[300/1400] Loss: 0.0509 Acc:98.12%
+Training:Epoch[002/010] Iteration[400/1400] Loss: 0.0671 Acc:98.03%
+Training:Epoch[002/010] Iteration[500/1400] Loss: 0.0600 Acc:98.06%
+Training:Epoch[002/010] Iteration[600/1400] Loss: 0.0445 Acc:98.12%
+Training:Epoch[002/010] Iteration[700/1400] Loss: 0.0318 Acc:98.23%
+Training:Epoch[002/010] Iteration[800/1400] Loss: 0.0706 Acc:98.19%
+Training:Epoch[002/010] Iteration[900/1400] Loss: 0.0402 Acc:98.22%
+Training:Epoch[002/010] Iteration[1000/1400] Loss: 0.0733 Acc:98.16%
+Training:Epoch[002/010] Iteration[1100/1400] Loss: 0.0419 Acc:98.19%
+Training:Epoch[002/010] Iteration[1200/1400] Loss: 0.0533 Acc:98.21%
+Training:Epoch[002/010] Iteration[1300/1400] Loss: 0.0744 Acc:98.19%
+Training:Epoch[002/010] Iteration[1400/1400] Loss: 0.0409 Acc:98.22%
+[[1591    0    0    0    0    0    0    0    0    0    0    8]
+ [   0 1573    2    0    0    0    1    1    5   18    0    0]
+ [   0    0 1594    0    0    0    0    0    3    3    0    0]
+ [   0    0    0 1600    0    0    0    0    0    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    1    0 1599    0    0    0    0    0    0]
+ [   0    0    0    0    0    0 4797    0    1    2    0    0]
+ [   1    1    0    1    0    2    0 1593    1    0    0    1]
+ [   0   11   14    1    0    1    2    0 1466  105    0    0]
+ [   0   42   10    0    0    0    4    0  135 1407    0    2]
+ [   0    0    0    0    0    0    0    0    0    0 1600    0]
+ [  13    1    1    0    0    0    0    1    2    1    1 1580]]
+-------- over train Epoch [002] ---------
+-------- starts test Epoch [002] ---------
+TestSet:	 Epoch[002/010] Iteration[1145/1145] Loss: 64.9355 Acc:98.11%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  645    1    0    0    0    1    0    7    8    0    0]
+ [   0    0 1069    0    0    0    1    0    0    0    0    0]
+ [   0    0    0 2346    0    0    0    0    0    1    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    0    0    1    0 1438    0    0    1    2    0    0]
+ [   0    0    0    0    0    0   50    0    0    8    0    0]
+ [   0    3    3    0    1    3    0 2389    0    0    0    0]
+ [   0    9    7    0    0    0    0    0 2365   18    0    0]
+ [   0   38   11    0    0    0    6    0  186 2158    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [   9    3    0    0    0    1    2    3    3    4    4 2370]]
+Family 1 :
+-----------------------------
+Precison = 0.9866      Recall = 1.0000
+F-Score = 0.9933       Acc = 0.9995
+Family 2 :
+-----------------------------
+Precison = 0.9241      Recall = 0.9743
+F-Score = 0.9485       Acc = 0.9962
+Family 3 :
+-----------------------------
+Precison = 0.9798      Recall = 0.9991
+F-Score = 0.9894       Acc = 0.9987
+Family 4 :
+-----------------------------
+Precison = 0.9996      Recall = 0.9996
+F-Score = 0.9996       Acc = 0.9999
+Family 5 :
+-----------------------------
+Precison = 0.6667      Recall = 0.5000
+F-Score = 0.5714       Acc = 0.9998
+Family 6 :
+-----------------------------
+Precison = 0.9972      Recall = 0.9972
+F-Score = 0.9972       Acc = 0.9996
+Family 7 :
+-----------------------------
+Precison = 0.8333      Recall = 0.8621
+F-Score = 0.8475       Acc = 0.9990
+Family 8 :
+-----------------------------
+Precison = 0.9987      Recall = 0.9958
+F-Score = 0.9973       Acc = 0.9993
+Family 9 :
+-----------------------------
+Precison = 0.9231      Recall = 0.9858
+F-Score = 0.9534       Acc = 0.9874
+Family 10 :
+-----------------------------
+Precison = 0.9814      Recall = 0.8995
+F-Score = 0.9387       Acc = 0.9846
+Family 11 :
+-----------------------------
+Precison = 0.9983      Recall = 1.0000
+F-Score = 0.9992       Acc = 0.9998
+Family 12 :
+-----------------------------
+Precison = 0.9996      Recall = 0.9879
+F-Score = 0.9937       Acc = 0.9984
+-------- over test Epoch [002] ---------
+-------- start train Epoch [003] ---------
+Training:Epoch[003/010] Iteration[100/1400] Loss: 0.0430 Acc:98.88%
+Training:Epoch[003/010] Iteration[200/1400] Loss: 0.0174 Acc:99.09%
+Training:Epoch[003/010] Iteration[300/1400] Loss: 0.0417 Acc:98.85%
+Training:Epoch[003/010] Iteration[400/1400] Loss: 0.0133 Acc:99.00%
+Training:Epoch[003/010] Iteration[500/1400] Loss: 0.0237 Acc:99.00%
+Training:Epoch[003/010] Iteration[600/1400] Loss: 0.0335 Acc:98.99%
+Training:Epoch[003/010] Iteration[700/1400] Loss: 0.0358 Acc:98.96%
+Training:Epoch[003/010] Iteration[800/1400] Loss: 0.0219 Acc:98.98%
+Training:Epoch[003/010] Iteration[900/1400] Loss: 0.0290 Acc:98.99%
+Training:Epoch[003/010] Iteration[1000/1400] Loss: 0.0186 Acc:99.04%
+Training:Epoch[003/010] Iteration[1100/1400] Loss: 0.0234 Acc:99.06%
+Training:Epoch[003/010] Iteration[1200/1400] Loss: 0.0423 Acc:99.06%
+Training:Epoch[003/010] Iteration[1300/1400] Loss: 0.0149 Acc:99.10%
+Training:Epoch[003/010] Iteration[1400/1400] Loss: 0.0378 Acc:99.07%
+[[1599    0    0    0    0    0    0    0    0    0    0    0]
+ [   0 1580    1    0    0    0    1    0    3   14    0    1]
+ [   0    1 1598    0    0    0    0    0    1    0    0    0]
+ [   0    0    0 1600    0    0    0    0    0    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    1    0 1598    0    0    0    0    0    1]
+ [   0    0    0    0    0    0 4798    0    0    2    0    0]
+ [   0    0    1    0    0    2    0 1595    0    1    0    1]
+ [   0    9    0    0    0    1    0    0 1533   57    0    0]
+ [   0   24    4    0    0    0    1    0   71 1499    0    1]
+ [   0    0    0    0    0    0    0    0    0    0 1599    1]
+ [   0    1    0    0    0    0    2    2    1    1    1 1592]]
+-------- over train Epoch [003] ---------
+-------- starts test Epoch [003] ---------
+TestSet:	 Epoch[003/010] Iteration[1145/1145] Loss: 54.2066 Acc:98.35%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  641    8    0    0    0    2    0    0   11    0    0]
+ [   0    0 1069    0    0    0    1    0    0    0    0    0]
+ [   0    0    0 2346    0    0    0    0    0    1    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    0    0    0    0 1441    0    0    1    0    0    0]
+ [   0    0    0    0    0    0   54    0    0    4    0    0]
+ [   0    1    0    0    0    3    0 2394    0    1    0    0]
+ [   0    4    8    0    0    1    0    0 2233  153    0    0]
+ [   0   27   11    0    0    0    4    0   38 2319    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [   3    2    1    0    1    4    0    0    0    3    7 2378]]
+Family 1 :
+-----------------------------
+Precison = 0.9946      Recall = 1.0000
+F-Score = 0.9973       Acc = 0.9998
+Family 2 :
+-----------------------------
+Precison = 0.9496      Recall = 0.9683
+F-Score = 0.9589       Acc = 0.9970
+Family 3 :
+-----------------------------
+Precison = 0.9745      Recall = 0.9991
+F-Score = 0.9866       Acc = 0.9984
+Family 4 :
+-----------------------------
+Precison = 1.0000      Recall = 0.9996
+F-Score = 0.9998       Acc = 0.9999
+Family 5 :
+-----------------------------
+Precison = 0.6667      Recall = 0.5000
+F-Score = 0.5714       Acc = 0.9998
+Family 6 :
+-----------------------------
+Precison = 0.9945      Recall = 0.9993
+F-Score = 0.9969       Acc = 0.9995
+Family 7 :
+-----------------------------
+Precison = 0.8852      Recall = 0.9310
+F-Score = 0.9076       Acc = 0.9994
+Family 8 :
+-----------------------------
+Precison = 1.0000      Recall = 0.9979
+F-Score = 0.9990       Acc = 0.9997
+Family 9 :
+-----------------------------
+Precison = 0.9828      Recall = 0.9308
+F-Score = 0.9561       Acc = 0.9888
+Family 10 :
+-----------------------------
+Precison = 0.9306      Recall = 0.9667
+F-Score = 0.9483       Acc = 0.9862
+Family 11 :
+-----------------------------
+Precison = 0.9971      Recall = 1.0000
+F-Score = 0.9985       Acc = 0.9996
+Family 12 :
+-----------------------------
+Precison = 0.9996      Recall = 0.9912
+F-Score = 0.9954       Acc = 0.9988
+-------- over test Epoch [003] ---------
+-------- start train Epoch [004] ---------
+Training:Epoch[004/010] Iteration[100/1400] Loss: 0.0184 Acc:99.44%
+Training:Epoch[004/010] Iteration[200/1400] Loss: 0.0102 Acc:99.62%
+Training:Epoch[004/010] Iteration[300/1400] Loss: 0.0106 Acc:99.67%
+Training:Epoch[004/010] Iteration[400/1400] Loss: 0.0318 Acc:99.53%
+Training:Epoch[004/010] Iteration[500/1400] Loss: 0.0328 Acc:99.40%
+Training:Epoch[004/010] Iteration[600/1400] Loss: 0.0116 Acc:99.46%
+Training:Epoch[004/010] Iteration[700/1400] Loss: 0.0216 Acc:99.44%
+Training:Epoch[004/010] Iteration[800/1400] Loss: 0.0162 Acc:99.44%
+Training:Epoch[004/010] Iteration[900/1400] Loss: 0.0220 Acc:99.42%
+Training:Epoch[004/010] Iteration[1000/1400] Loss: 0.0185 Acc:99.41%
+Training:Epoch[004/010] Iteration[1100/1400] Loss: 0.0142 Acc:99.41%
+Training:Epoch[004/010] Iteration[1200/1400] Loss: 0.0220 Acc:99.39%
+Training:Epoch[004/010] Iteration[1300/1400] Loss: 0.0250 Acc:99.37%
+Training:Epoch[004/010] Iteration[1400/1400] Loss: 0.0211 Acc:99.38%
+[[1599    0    0    0    0    0    0    0    0    0    0    0]
+ [   0 1585    0    0    0    0    0    0    2   13    0    0]
+ [   0    0 1598    0    0    0    0    0    1    1    0    0]
+ [   0    0    0 1599    0    0    0    0    1    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    0    0 1600    0    0    0    0    0    0]
+ [   0    0    0    0    0    0 4799    0    0    1    0    0]
+ [   0    0    0    0    0    2    0 1598    0    0    0    0]
+ [   0    3    3    0    0    0    0    0 1552   42    0    0]
+ [   0   19    1    0    0    0    0    0   49 1531    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 1600    0]
+ [   1    0    0    0    0    0    0    0    0    0    0 1599]]
+-------- over train Epoch [004] ---------
+-------- starts test Epoch [004] ---------
+TestSet:	 Epoch[004/010] Iteration[1145/1145] Loss: 114.9420 Acc:96.77%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  657    0    0    0    0    2    0    1    2    0    0]
+ [   0    1 1068    0    0    0    1    0    0    0    0    0]
+ [   0    0    0 2347    0    0    0    0    0    0    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    2    0    1    0 1439    0    0    0    0    0    0]
+ [   0    0    0    0    0    0   55    0    0    3    0    0]
+ [   0    5    0    1    0    3    0 2390    0    0    0    0]
+ [   0   26    5    0    0    0    0    1 2300   67    0    0]
+ [   0  347    4    1    0    0   60    0   37 1950    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [   2   11    1    0    0    0    2    1    0    1    1 2380]]
+Family 1 :
+-----------------------------
+Precison = 0.9959      Recall = 1.0000
+F-Score = 0.9980       Acc = 0.9998
+Family 2 :
+-----------------------------
+Precison = 0.6263      Recall = 0.9924
+F-Score = 0.7680       Acc = 0.9783
+Family 3 :
+-----------------------------
+Precison = 0.9907      Recall = 0.9981
+F-Score = 0.9944       Acc = 0.9993
+Family 4 :
+-----------------------------
+Precison = 0.9987      Recall = 1.0000
+F-Score = 0.9994       Acc = 0.9998
+Family 5 :
+-----------------------------
+Precison = 1.0000      Recall = 0.5000
+F-Score = 0.6667       Acc = 0.9999
+Family 6 :
+-----------------------------
+Precison = 0.9979      Recall = 0.9979
+F-Score = 0.9979       Acc = 0.9997
+Family 7 :
+-----------------------------
+Precison = 0.4583      Recall = 0.9483
+F-Score = 0.6180       Acc = 0.9963
+Family 8 :
+-----------------------------
+Precison = 0.9992      Recall = 0.9962
+F-Score = 0.9977       Acc = 0.9994
+Family 9 :
+-----------------------------
+Precison = 0.9837      Recall = 0.9587
+F-Score = 0.9711       Acc = 0.9925
+Family 10 :
+-----------------------------
+Precison = 0.9639      Recall = 0.8128
+F-Score = 0.8820       Acc = 0.9715
+Family 11 :
+-----------------------------
+Precison = 0.9996      Recall = 1.0000
+F-Score = 0.9998       Acc = 0.9999
+Family 12 :
+-----------------------------
+Precison = 0.9996      Recall = 0.9921
+F-Score = 0.9958       Acc = 0.9989
+-------- over test Epoch [004] ---------
+-------- start train Epoch [005] ---------
+Training:Epoch[005/010] Iteration[100/1400] Loss: 0.0162 Acc:99.62%
+Training:Epoch[005/010] Iteration[200/1400] Loss: 0.0044 Acc:99.72%
+Training:Epoch[005/010] Iteration[300/1400] Loss: 0.0137 Acc:99.60%
+Training:Epoch[005/010] Iteration[400/1400] Loss: 0.0064 Acc:99.66%
+Training:Epoch[005/010] Iteration[500/1400] Loss: 0.0087 Acc:99.67%
+Training:Epoch[005/010] Iteration[600/1400] Loss: 0.0092 Acc:99.66%
+Training:Epoch[005/010] Iteration[700/1400] Loss: 0.0407 Acc:99.53%
+Training:Epoch[005/010] Iteration[800/1400] Loss: 0.0179 Acc:99.52%
+Training:Epoch[005/010] Iteration[900/1400] Loss: 0.0116 Acc:99.56%
+Training:Epoch[005/010] Iteration[1000/1400] Loss: 0.0055 Acc:99.58%
+Training:Epoch[005/010] Iteration[1100/1400] Loss: 0.0116 Acc:99.59%
+Training:Epoch[005/010] Iteration[1200/1400] Loss: 0.0256 Acc:99.55%
+Training:Epoch[005/010] Iteration[1300/1400] Loss: 0.0147 Acc:99.54%
+Training:Epoch[005/010] Iteration[1400/1400] Loss: 0.0138 Acc:99.55%
+[[1599    0    0    0    0    0    0    0    0    0    0    0]
+ [   0 1586    1    0    0    0    2    2    1    8    0    0]
+ [   0    2 1598    0    0    0    0    0    0    0    0    0]
+ [   0    0    0 1600    0    0    0    0    0    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    0    0 1599    0    1    0    0    0    0]
+ [   1    1    0    0    0    0 4797    0    0    1    0    0]
+ [   0    0    1    0    0    1    1 1597    0    0    0    0]
+ [   0    2    0    1    0    0    0    0 1574   23    0    0]
+ [   0   16    1    0    0    1    2    0   28 1552    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 1599    1]
+ [   0    0    0    0    0    0    0    0    1    1    1 1597]]
+-------- over train Epoch [005] ---------
+-------- starts test Epoch [005] ---------
+TestSet:	 Epoch[005/010] Iteration[1145/1145] Loss: 37.6814 Acc:99.20%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  643    0    0    0    0    2    0    1   16    0    0]
+ [   0    0 1069    0    0    0    1    0    0    0    0    0]
+ [   0    0    0 2347    0    0    0    0    0    0    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    1    0    1    0 1438    0    0    1    1    0    0]
+ [   0    0    0    0    0    0   53    0    0    5    0    0]
+ [   0    3    0    0    0    2    0 2394    0    0    0    0]
+ [   0    4    3    0    0    0    0    0 2370   22    0    0]
+ [   0   20    0    0    0    0    0    0   44 2335    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [   2   10    0    0    0    0    1    0    1    3    0 2382]]
+Family 1 :
+-----------------------------
+Precison = 0.9959      Recall = 1.0000
+F-Score = 0.9980       Acc = 0.9998
+Family 2 :
+-----------------------------
+Precison = 0.9442      Recall = 0.9713
+F-Score = 0.9576       Acc = 0.9969
+Family 3 :
+-----------------------------
+Precison = 0.9972      Recall = 0.9991
+F-Score = 0.9981       Acc = 0.9998
+Family 4 :
+-----------------------------
+Precison = 0.9996      Recall = 1.0000
+F-Score = 0.9998       Acc = 0.9999
+Family 5 :
+-----------------------------
+Precison = 1.0000      Recall = 0.5000
+F-Score = 0.6667       Acc = 0.9999
+Family 6 :
+-----------------------------
+Precison = 0.9986      Recall = 0.9972
+F-Score = 0.9979       Acc = 0.9997
+Family 7 :
+-----------------------------
+Precison = 0.9298      Recall = 0.9138
+F-Score = 0.9217       Acc = 0.9995
+Family 8 :
+-----------------------------
+Precison = 1.0000      Recall = 0.9979
+F-Score = 0.9990       Acc = 0.9997
+Family 9 :
+-----------------------------
+Precison = 0.9806      Recall = 0.9879
+F-Score = 0.9842       Acc = 0.9959
+Family 10 :
+-----------------------------
+Precison = 0.9803      Recall = 0.9733
+F-Score = 0.9768       Acc = 0.9939
+Family 11 :
+-----------------------------
+Precison = 1.0000      Recall = 1.0000
+F-Score = 1.0000       Acc = 1.0000
+Family 12 :
+-----------------------------
+Precison = 0.9996      Recall = 0.9929
+F-Score = 0.9962       Acc = 0.9990
+-------- over test Epoch [005] ---------
+-------- start train Epoch [006] ---------
+Training:Epoch[006/010] Iteration[100/1400] Loss: 0.0039 Acc:99.88%
+Training:Epoch[006/010] Iteration[200/1400] Loss: 0.0125 Acc:99.81%
+Training:Epoch[006/010] Iteration[300/1400] Loss: 0.0053 Acc:99.79%
+Training:Epoch[006/010] Iteration[400/1400] Loss: 0.0117 Acc:99.69%
+Training:Epoch[006/010] Iteration[500/1400] Loss: 0.0237 Acc:99.58%
+Training:Epoch[006/010] Iteration[600/1400] Loss: 0.0130 Acc:99.58%
+Training:Epoch[006/010] Iteration[700/1400] Loss: 0.0048 Acc:99.63%
+Training:Epoch[006/010] Iteration[800/1400] Loss: 0.0216 Acc:99.60%
+Training:Epoch[006/010] Iteration[900/1400] Loss: 0.0149 Acc:99.60%
+Training:Epoch[006/010] Iteration[1000/1400] Loss: 0.0109 Acc:99.61%
+Training:Epoch[006/010] Iteration[1100/1400] Loss: 0.0121 Acc:99.59%
+Training:Epoch[006/010] Iteration[1200/1400] Loss: 0.0099 Acc:99.59%
+Training:Epoch[006/010] Iteration[1300/1400] Loss: 0.0058 Acc:99.61%
+Training:Epoch[006/010] Iteration[1400/1400] Loss: 0.0028 Acc:99.63%
+[[1599    0    0    0    0    0    0    0    0    0    0    0]
+ [   0 1588    1    0    0    0    1    0    2    8    0    0]
+ [   0    1 1598    0    0    0    0    0    0    1    0    0]
+ [   0    0    0 1600    0    0    0    0    0    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    0    0 1599    0    0    1    0    0    0]
+ [   0    0    0    0    0    0 4798    0    1    1    0    0]
+ [   1    0    0    0    0    1    0 1598    0    0    0    0]
+ [   0    3    0    0    0    0    1    0 1574   22    0    0]
+ [   0   12    2    0    0    0    1    0   21 1564    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 1600    0]
+ [   0    0    0    0    0    1    0    0    0    0    0 1599]]
+-------- over train Epoch [006] ---------
+-------- starts test Epoch [006] ---------
+TestSet:	 Epoch[006/010] Iteration[1145/1145] Loss: 33.0491 Acc:99.19%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  646    0    0    0    0    2    0    1   13    0    0]
+ [   0    0 1069    0    0    0    1    0    0    0    0    0]
+ [   0    0    0 2347    0    0    0    0    0    0    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    0    0    1    0 1440    0    0    1    0    0    0]
+ [   0    0    0    0    0    0   55    0    0    3    0    0]
+ [   0    2    0    0    0    3    0 2393    0    0    0    1]
+ [   0    1    3    0    0    1    0    0 2374   19    0    1]
+ [   0   22    2    0    0    0    4    0   55 2315    0    1]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [   3    3    0    0    0    0    0    2    0    1    0 2390]]
+Family 1 :
+-----------------------------
+Precison = 0.9946      Recall = 1.0000
+F-Score = 0.9973       Acc = 0.9998
+Family 2 :
+-----------------------------
+Precison = 0.9585      Recall = 0.9758
+F-Score = 0.9671       Acc = 0.9976
+Family 3 :
+-----------------------------
+Precison = 0.9953      Recall = 0.9991
+F-Score = 0.9972       Acc = 0.9997
+Family 4 :
+-----------------------------
+Precison = 0.9996      Recall = 1.0000
+F-Score = 0.9998       Acc = 0.9999
+Family 5 :
+-----------------------------
+Precison = 1.0000      Recall = 0.5000
+F-Score = 0.6667       Acc = 0.9999
+Family 6 :
+-----------------------------
+Precison = 0.9972      Recall = 0.9986
+F-Score = 0.9979       Acc = 0.9997
+Family 7 :
+-----------------------------
+Precison = 0.8871      Recall = 0.9483
+F-Score = 0.9167       Acc = 0.9995
+Family 8 :
+-----------------------------
+Precison = 0.9992      Recall = 0.9975
+F-Score = 0.9983       Acc = 0.9996
+Family 9 :
+-----------------------------
+Precison = 0.9766      Recall = 0.9896
+F-Score = 0.9830       Acc = 0.9955
+Family 10 :
+-----------------------------
+Precison = 0.9847      Recall = 0.9650
+F-Score = 0.9747       Acc = 0.9934
+Family 11 :
+-----------------------------
+Precison = 1.0000      Recall = 1.0000
+F-Score = 1.0000       Acc = 1.0000
+Family 12 :
+-----------------------------
+Precison = 0.9983      Recall = 0.9962
+F-Score = 0.9973       Acc = 0.9993
+-------- over test Epoch [006] ---------
+-------- start train Epoch [007] ---------
+Training:Epoch[007/010] Iteration[100/1400] Loss: 0.0127 Acc:99.56%
+Training:Epoch[007/010] Iteration[200/1400] Loss: 0.0088 Acc:99.69%
+Training:Epoch[007/010] Iteration[300/1400] Loss: 0.0058 Acc:99.73%
+Training:Epoch[007/010] Iteration[400/1400] Loss: 0.0034 Acc:99.78%
+Training:Epoch[007/010] Iteration[500/1400] Loss: 0.0016 Acc:99.81%
+Training:Epoch[007/010] Iteration[600/1400] Loss: 0.0070 Acc:99.81%
+Training:Epoch[007/010] Iteration[700/1400] Loss: 0.0084 Acc:99.80%
+Training:Epoch[007/010] Iteration[800/1400] Loss: 0.0089 Acc:99.80%
+Training:Epoch[007/010] Iteration[900/1400] Loss: 0.0078 Acc:99.79%
+Training:Epoch[007/010] Iteration[1000/1400] Loss: 0.0055 Acc:99.78%
+Training:Epoch[007/010] Iteration[1100/1400] Loss: 0.0108 Acc:99.76%
+Training:Epoch[007/010] Iteration[1200/1400] Loss: 0.0146 Acc:99.74%
+Training:Epoch[007/010] Iteration[1300/1400] Loss: 0.0185 Acc:99.73%
+Training:Epoch[007/010] Iteration[1400/1400] Loss: 0.0050 Acc:99.73%
+[[1598    0    0    0    0    0    0    0    0    0    0    1]
+ [   0 1595    2    0    0    0    0    0    1    2    0    0]
+ [   0    2 1597    0    0    0    0    0    0    1    0    0]
+ [   0    0    0 1600    0    0    0    0    0    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    0    0 1599    0    1    0    0    0    0]
+ [   0    0    0    0    0    0 4799    0    0    1    0    0]
+ [   0    0    0    0    0    1    0 1599    0    0    0    0]
+ [   0    2    2    0    0    0    0    0 1577   19    0    0]
+ [   0    3    1    0    0    0    2    0   18 1575    1    0]
+ [   0    0    0    0    0    0    0    0    0    0 1600    0]
+ [   0    0    0    0    0    0    0    0    0    0    0 1600]]
+-------- over train Epoch [007] ---------
+-------- starts test Epoch [007] ---------
+TestSet:	 Epoch[007/010] Iteration[1145/1145] Loss: 36.0338 Acc:99.08%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  651    1    0    0    0    2    0    1    7    0    0]
+ [   0    0 1068    0    0    0    1    0    0    1    0    0]
+ [   0    0    0 2347    0    0    0    0    0    0    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    0    0    1    0 1440    0    0    1    0    0    0]
+ [   0    0    0    0    0    0   54    0    0    4    0    0]
+ [   0    1    0    0    0    3    0 2393    0    1    0    1]
+ [   0    2    2    0    0    1    0    0 2386    6    0    2]
+ [   0   28    0    0    0    0    6    0   60 2303    0    2]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [  28    2    0    0    0    0    0    1    1    0    0 2367]]
+Family 1 :
+-----------------------------
+Precison = 0.9621      Recall = 1.0000
+F-Score = 0.9807       Acc = 0.9984
+Family 2 :
+-----------------------------
+Precison = 0.9518      Recall = 0.9834
+F-Score = 0.9673       Acc = 0.9976
+Family 3 :
+-----------------------------
+Precison = 0.9972      Recall = 0.9981
+F-Score = 0.9977       Acc = 0.9997
+Family 4 :
+-----------------------------
+Precison = 0.9996      Recall = 1.0000
+F-Score = 0.9998       Acc = 0.9999
+Family 5 :
+-----------------------------
+Precison = 1.0000      Recall = 0.5000
+F-Score = 0.6667       Acc = 0.9999
+Family 6 :
+-----------------------------
+Precison = 0.9972      Recall = 0.9986
+F-Score = 0.9979       Acc = 0.9997
+Family 7 :
+-----------------------------
+Precison = 0.8571      Recall = 0.9310
+F-Score = 0.8926       Acc = 0.9993
+Family 8 :
+-----------------------------
+Precison = 0.9996      Recall = 0.9975
+F-Score = 0.9985       Acc = 0.9996
+Family 9 :
+-----------------------------
+Precison = 0.9743      Recall = 0.9946
+F-Score = 0.9843       Acc = 0.9959
+Family 10 :
+-----------------------------
+Precison = 0.9918      Recall = 0.9600
+F-Score = 0.9756       Acc = 0.9937
+Family 11 :
+-----------------------------
+Precison = 1.0000      Recall = 1.0000
+F-Score = 1.0000       Acc = 1.0000
+Family 12 :
+-----------------------------
+Precison = 0.9975      Recall = 0.9867
+F-Score = 0.9920       Acc = 0.9979
+-------- over test Epoch [007] ---------
+-------- start train Epoch [008] ---------
+Training:Epoch[008/010] Iteration[100/1400] Loss: 0.0133 Acc:99.75%
+Training:Epoch[008/010] Iteration[200/1400] Loss: 0.0045 Acc:99.81%
+Training:Epoch[008/010] Iteration[300/1400] Loss: 0.0008 Acc:99.88%
+Training:Epoch[008/010] Iteration[400/1400] Loss: 0.0037 Acc:99.89%
+Training:Epoch[008/010] Iteration[500/1400] Loss: 0.0063 Acc:99.85%
+Training:Epoch[008/010] Iteration[600/1400] Loss: 0.0052 Acc:99.83%
+Training:Epoch[008/010] Iteration[700/1400] Loss: 0.0057 Acc:99.82%
+Training:Epoch[008/010] Iteration[800/1400] Loss: 0.0102 Acc:99.80%
+Training:Epoch[008/010] Iteration[900/1400] Loss: 0.0101 Acc:99.77%
+Training:Epoch[008/010] Iteration[1000/1400] Loss: 0.0065 Acc:99.77%
+Training:Epoch[008/010] Iteration[1100/1400] Loss: 0.0008 Acc:99.79%
+Training:Epoch[008/010] Iteration[1200/1400] Loss: 0.0073 Acc:99.79%
+Training:Epoch[008/010] Iteration[1300/1400] Loss: 0.0142 Acc:99.77%
+Training:Epoch[008/010] Iteration[1400/1400] Loss: 0.0104 Acc:99.76%
+[[1598    0    0    0    0    0    0    0    0    0    0    1]
+ [   0 1597    0    0    0    0    0    0    0    3    0    0]
+ [   0    0 1599    0    0    0    0    0    0    1    0    0]
+ [   0    0    0 1600    0    0    0    0    0    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    0    0 1599    0    1    0    0    0    0]
+ [   0    0    0    0    0    0 4800    0    0    0    0    0]
+ [   0    0    0    0    0    1    0 1597    0    0    0    2]
+ [   0    0    0    0    0    0    0    0 1585   15    0    0]
+ [   0    4    1    0    0    0    1    0   19 1575    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 1600    0]
+ [   2    0    0    0    0    0    0    2    0    0    0 1596]]
+-------- over train Epoch [008] ---------
+-------- starts test Epoch [008] ---------
+TestSet:	 Epoch[008/010] Iteration[1145/1145] Loss: 44.4843 Acc:99.01%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  655    0    0    0    0    2    0    0    5    0    0]
+ [   0    0 1069    0    0    0    1    0    0    0    0    0]
+ [   0    0    0 2347    0    0    0    0    0    0    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    0    0    1    0 1440    0    0    1    0    0    0]
+ [   0    0    0    0    0    0   54    0    0    4    0    0]
+ [   0    2    0    1    0    3    0 2393    0    0    0    0]
+ [   0   13    2    0    0    0    0    0 2310   74    0    0]
+ [   0   43    1    0    0    0    0    0    9 2346    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [   4    5    0    0    0    2    2    0    2    2    0 2382]]
+Family 1 :
+-----------------------------
+Precison = 0.9933      Recall = 1.0000
+F-Score = 0.9966       Acc = 0.9997
+Family 2 :
+-----------------------------
+Precison = 0.9123      Recall = 0.9894
+F-Score = 0.9493       Acc = 0.9962
+Family 3 :
+-----------------------------
+Precison = 0.9972      Recall = 0.9991
+F-Score = 0.9981       Acc = 0.9998
+Family 4 :
+-----------------------------
+Precison = 0.9991      Recall = 1.0000
+F-Score = 0.9996       Acc = 0.9999
+Family 5 :
+-----------------------------
+Precison = 1.0000      Recall = 0.5000
+F-Score = 0.6667       Acc = 0.9999
+Family 6 :
+-----------------------------
+Precison = 0.9965      Recall = 0.9986
+F-Score = 0.9976       Acc = 0.9996
+Family 7 :
+-----------------------------
+Precison = 0.9153      Recall = 0.9310
+F-Score = 0.9231       Acc = 0.9995
+Family 8 :
+-----------------------------
+Precison = 1.0000      Recall = 0.9975
+F-Score = 0.9987       Acc = 0.9997
+Family 9 :
+-----------------------------
+Precison = 0.9948      Recall = 0.9629
+F-Score = 0.9786       Acc = 0.9945
+Family 10 :
+-----------------------------
+Precison = 0.9650      Recall = 0.9779
+F-Score = 0.9714       Acc = 0.9925
+Family 11 :
+-----------------------------
+Precison = 1.0000      Recall = 1.0000
+F-Score = 1.0000       Acc = 1.0000
+Family 12 :
+-----------------------------
+Precison = 0.9996      Recall = 0.9929
+F-Score = 0.9962       Acc = 0.9990
+-------- over test Epoch [008] ---------
+-------- start train Epoch [009] ---------
+Training:Epoch[009/010] Iteration[100/1400] Loss: 0.0023 Acc:99.94%
+Training:Epoch[009/010] Iteration[200/1400] Loss: 0.0018 Acc:99.97%
+Training:Epoch[009/010] Iteration[300/1400] Loss: 0.0035 Acc:99.92%
+Training:Epoch[009/010] Iteration[400/1400] Loss: 0.0036 Acc:99.91%
+Training:Epoch[009/010] Iteration[500/1400] Loss: 0.0146 Acc:99.83%
+Training:Epoch[009/010] Iteration[600/1400] Loss: 0.0086 Acc:99.83%
+Training:Epoch[009/010] Iteration[700/1400] Loss: 0.0011 Acc:99.86%
+Training:Epoch[009/010] Iteration[800/1400] Loss: 0.0053 Acc:99.85%
+Training:Epoch[009/010] Iteration[900/1400] Loss: 0.0027 Acc:99.86%
+Training:Epoch[009/010] Iteration[1000/1400] Loss: 0.0016 Acc:99.87%
+Training:Epoch[009/010] Iteration[1100/1400] Loss: 0.0051 Acc:99.86%
+Training:Epoch[009/010] Iteration[1200/1400] Loss: 0.0013 Acc:99.88%
+Training:Epoch[009/010] Iteration[1300/1400] Loss: 0.0040 Acc:99.87%
+Training:Epoch[009/010] Iteration[1400/1400] Loss: 0.0048 Acc:99.87%
+[[1599    0    0    0    0    0    0    0    0    0    0    0]
+ [   0 1600    0    0    0    0    0    0    0    0    0    0]
+ [   0    0 1600    0    0    0    0    0    0    0    0    0]
+ [   0    0    0 1600    0    0    0    0    0    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    0    0 1600    0    0    0    0    0    0]
+ [   0    0    0    0    0    0 4799    0    0    1    0    0]
+ [   0    0    0    0    0    0    0 1600    0    0    0    0]
+ [   0    0    0    0    0    0    0    0 1586   14    0    0]
+ [   0    2    0    0    0    0    0    0   12 1586    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 1600    0]
+ [   0    0    0    0    0    0    0    0    1    0    0 1599]]
+-------- over train Epoch [009] ---------
+-------- starts test Epoch [009] ---------
+TestSet:	 Epoch[009/010] Iteration[1145/1145] Loss: 34.7607 Acc:99.14%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  641    0    0    0    0    2    0    0   19    0    0]
+ [   0    0 1069    0    0    0    1    0    0    0    0    0]
+ [   0    0    0 2345    0    0    0    0    2    0    0    0]
+ [   1    0    0    0    2    0    0    0    0    0    0    1]
+ [   0    0    0    1    0 1440    0    0    1    0    0    0]
+ [   0    0    0    0    0    0   55    0    0    3    0    0]
+ [   0    2    0    0    0    3    0 2392    0    0    0    2]
+ [   0    0    2    0    0    0    0    0 2332   65    0    0]
+ [   0   11    1    0    0    0    0    0   26 2361    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [   2    5    0    0    0    1    1    0    0    5    0 2385]]
+Family 1 :
+-----------------------------
+Precison = 0.9959      Recall = 1.0000
+F-Score = 0.9980       Acc = 0.9998
+Family 2 :
+-----------------------------
+Precison = 0.9727      Recall = 0.9683
+F-Score = 0.9705       Acc = 0.9979
+Family 3 :
+-----------------------------
+Precison = 0.9972      Recall = 0.9991
+F-Score = 0.9981       Acc = 0.9998
+Family 4 :
+-----------------------------
+Precison = 0.9996      Recall = 0.9991
+F-Score = 0.9994       Acc = 0.9998
+Family 5 :
+-----------------------------
+Precison = 1.0000      Recall = 0.5000
+F-Score = 0.6667       Acc = 0.9999
+Family 6 :
+-----------------------------
+Precison = 0.9972      Recall = 0.9986
+F-Score = 0.9979       Acc = 0.9997
+Family 7 :
+-----------------------------
+Precison = 0.9322      Recall = 0.9483
+F-Score = 0.9402       Acc = 0.9996
+Family 8 :
+-----------------------------
+Precison = 1.0000      Recall = 0.9971
+F-Score = 0.9985       Acc = 0.9996
+Family 9 :
+-----------------------------
+Precison = 0.9877      Recall = 0.9721
+F-Score = 0.9798       Acc = 0.9948
+Family 10 :
+-----------------------------
+Precison = 0.9625      Recall = 0.9842
+F-Score = 0.9732       Acc = 0.9929
+Family 11 :
+-----------------------------
+Precison = 1.0000      Recall = 1.0000
+F-Score = 1.0000       Acc = 1.0000
+Family 12 :
+-----------------------------
+Precison = 0.9987      Recall = 0.9942
+F-Score = 0.9964       Acc = 0.9991
+-------- over test Epoch [009] ---------
+-------- start train Epoch [010] ---------
+Training:Epoch[010/010] Iteration[100/1400] Loss: 0.0042 Acc:99.81%
+Training:Epoch[010/010] Iteration[200/1400] Loss: 0.0014 Acc:99.88%
+Training:Epoch[010/010] Iteration[300/1400] Loss: 0.0012 Acc:99.90%
+Training:Epoch[010/010] Iteration[400/1400] Loss: 0.0009 Acc:99.92%
+Training:Epoch[010/010] Iteration[500/1400] Loss: 0.0012 Acc:99.92%
+Training:Epoch[010/010] Iteration[600/1400] Loss: 0.0032 Acc:99.93%
+Training:Epoch[010/010] Iteration[700/1400] Loss: 0.0006 Acc:99.94%
+Training:Epoch[010/010] Iteration[800/1400] Loss: 0.0054 Acc:99.93%
+Training:Epoch[010/010] Iteration[900/1400] Loss: 0.0021 Acc:99.93%
+Training:Epoch[010/010] Iteration[1000/1400] Loss: 0.0008 Acc:99.94%
+Training:Epoch[010/010] Iteration[1100/1400] Loss: 0.0029 Acc:99.93%
+Training:Epoch[010/010] Iteration[1200/1400] Loss: 0.0016 Acc:99.93%
+Training:Epoch[010/010] Iteration[1300/1400] Loss: 0.0024 Acc:99.93%
+Training:Epoch[010/010] Iteration[1400/1400] Loss: 0.0044 Acc:99.92%
+[[1599    0    0    0    0    0    0    0    0    0    0    0]
+ [   0 1597    0    0    0    0    0    0    0    3    0    0]
+ [   0    0 1600    0    0    0    0    0    0    0    0    0]
+ [   0    0    0 1600    0    0    0    0    0    0    0    0]
+ [   0    0    0    0 1600    0    0    0    0    0    0    0]
+ [   0    0    0    0    0 1600    0    0    0    0    0    0]
+ [   0    0    0    0    0    0 4800    0    0    0    0    0]
+ [   0    0    0    0    0    0    0 1600    0    0    0    0]
+ [   0    0    0    0    0    0    0    0 1592    8    0    0]
+ [   0    0    0    0    0    0    0    0    6 1594    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 1600    0]
+ [   0    0    0    0    0    0    0    0    0    0    0 1600]]
+-------- over train Epoch [010] ---------
+-------- starts test Epoch [010] ---------
+TestSet:	 Epoch[010/010] Iteration[1145/1145] Loss: 35.3311 Acc:99.24%
+[[ 736    0    0    0    0    0    0    0    0    0    0    0]
+ [   0  652    0    0    0    0    1    0    0    9    0    0]
+ [   0    0 1069    0    0    0    1    0    0    0    0    0]
+ [   0    0    0 2347    0    0    0    0    0    0    0    0]
+ [   1    0    0    0    1    0    0    0    0    0    0    2]
+ [   0    0    0    1    0 1439    0    0    1    1    0    0]
+ [   0    0    0    0    0    0   50    0    0    8    0    0]
+ [   0    2    0    0    0    3    0 2394    0    0    0    0]
+ [   0    4    2    0    0    0    0    0 2356   37    0    0]
+ [   0   24    0    0    0    0    0    0   27 2348    0    0]
+ [   0    0    0    0    0    0    0    0    0    0 2399    0]
+ [   1    6    0    0    0    2    0    0    3    4    0 2383]]
+Family 1 :
+-----------------------------
+Precison = 0.9973      Recall = 1.0000
+F-Score = 0.9986       Acc = 0.9999
+Family 2 :
+-----------------------------
+Precison = 0.9477      Recall = 0.9849
+F-Score = 0.9659       Acc = 0.9975
+Family 3 :
+-----------------------------
+Precison = 0.9981      Recall = 0.9991
+F-Score = 0.9986       Acc = 0.9998
+Family 4 :
+-----------------------------
+Precison = 0.9996      Recall = 1.0000
+F-Score = 0.9998       Acc = 0.9999
+Family 5 :
+-----------------------------
+Precison = 1.0000      Recall = 0.2500
+F-Score = 0.4000       Acc = 0.9998
+Family 6 :
+-----------------------------
+Precison = 0.9965      Recall = 0.9979
+F-Score = 0.9972       Acc = 0.9996
+Family 7 :
+-----------------------------
+Precison = 0.9615      Recall = 0.8621
+F-Score = 0.9091       Acc = 0.9995
+Family 8 :
+-----------------------------
+Precison = 1.0000      Recall = 0.9979
+F-Score = 0.9990       Acc = 0.9997
+Family 9 :
+-----------------------------
+Precison = 0.9870      Recall = 0.9821
+F-Score = 0.9845       Acc = 0.9960
+Family 10 :
+-----------------------------
+Precison = 0.9755      Recall = 0.9787
+F-Score = 0.9771       Acc = 0.9940
+Family 11 :
+-----------------------------
+Precison = 1.0000      Recall = 1.0000
+F-Score = 1.0000       Acc = 1.0000
+Family 12 :
+-----------------------------
+Precison = 0.9992      Recall = 0.9933
+F-Score = 0.9962       Acc = 0.9990
+-------- over test Epoch [010] ---------
