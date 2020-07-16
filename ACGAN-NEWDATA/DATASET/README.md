@@ -1,0 +1,3 @@
+- classList:  ['Benign', 'Botnet ARES', 'DDos', 'DoS-GoldenEye', 'Dos-Hulk', 'Dos-Slowhttptest', 'DoS-Slowloris', 'FTP-Patator', 'PortScan', 'SSH-Patator', 'WebAttack']
+- class2Label:  {'Benign': 10, 'Botnet ARES': 0, 'DDos': 9, 'DoS-GoldenEye': 8, 'Dos-Hulk': 7, 'Dos-Slowhttptest': 1, 'DoS-Slowloris': 2, 'FTP-Patator': 3, 'PortScan': 6, 'SSH-Patator': 4, 'WebAttack': 5}
+- umbalancedClass :  ['Botnet ARES', 'Dos-Slowhttptest', 'DoS-Slowloris', 'FTP-Patator', 'SSH-Patator', 'WebAttack']
